@@ -17,11 +17,11 @@ else{
     <title>Signin </title>
 </head>
 <body>
-    <form action="" method="post">
+    <form action="" method="post"> 
         <label for="User Name"> Enter Your User Name</label>
         <input type="text" name="username" id="">
         <button type="submit" name ="submit">Submit</button>
-
+        New To PHPTUT ? <a href="signup.php">Signup</a>      
        <?php
     }
        ?>

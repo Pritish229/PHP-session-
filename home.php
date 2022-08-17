@@ -2,8 +2,7 @@
     session_start();
 if (isset($_SESSION['username'])) {
     $LogedInUser = $_SESSION['username'];
-}
-else $LogedInUser = null; {
+} else $LogedInUser = null; 
 
 
 ?>
@@ -21,20 +20,16 @@ else $LogedInUser = null; {
     if ($LogedInUser == null) {
     
     ?>
-    <a href="signin.php">Signin</a>
-
-    <?php
+    <a href="signin.php">Sign in</a>
+    <?php 
     } else {    
         ?>
          Hello User  <?php echo $LogedInUser; ?>
          <a href="signout.php">Signout</a>
          <a href="profile.php">Update profile</a>
-
-
-
     <?php
     }
-}
+
     ?>
 
 

@@ -1,15 +1,19 @@
+
 <?php
     session_start();
-    if (isset($_SESSION['username'])){
-        $username = $_SESSION['username'];
-        
-        if(isset($_POST['username'])){
-            $_SESSION['username'] = $_POST['username'];
-             header("refresh:2; home.php");
-             echo "Profile name updated";
-        }
-        else{
+    $con = mysqli_connect('localhost','root','','phptut');
+    if(isset($_POST['register'])){
+        $name = $_POST['name'];
+        $email = $_POST['email'];
+        $phone = $_POST['phone'];
+        mysqli_query($con , "INSERT INTO `users`(`name`, `email`, `phone`) VALUES ('$name' , '$email' , '$phone')");
+        $_SESSION['username'] = $_POST['name'];
+        header('refresh:2; home.php');
+        echo "registration sucessfull";
+    }
+
 ?>
+    
     <form action="" method="post" style = "width:500px; margin: auto;">
         <input type ="hidden" name ="register" >
         <h2>Register Here </h2>
@@ -43,12 +47,3 @@
     </tbody>
     </Table>
     </form>
-    <?php
-        }
-    ?>
-<?php 
-    }else{
-        header("refresh:3 ; signin.php");
-        echo "Unothorized access";
-    } 
-?>
