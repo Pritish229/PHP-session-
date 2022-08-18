@@ -1,5 +1,11 @@
 <?php
     session_start();
+    require"lib/conn.php";
+    $username = $_SESSION['username'];
+    $user_qr = mysqli_query($con, "SELECT * FROM `users` WHERE 'name' = '$username'");
+    $Userobj = mysqli_fetch_object($user_qr);
+    echo $Userobj['username'];
+
     if (isset($_SESSION['username'])){
         $username = $_SESSION['username'];
         
@@ -12,33 +18,30 @@
 ?>
     <form action="" method="post" style = "width:500px; margin: auto;">
         <input type ="hidden" name ="register" >
-        <h2>Register Here </h2>
+        <h2>Update your Profile </h2>
         <Table>
         
         <tbody>
             <tr>
                 <td>Name</td>
-                <td> <input type="text" name="name" id="name"> </td>
+                <td> <input type="text" name="name" id="name"  value = "<?php echo" " ?>"> </td>
              </tr>
              <tr>
                 <td>Email</td>
-                <td><input type="email" name="email" id="email"></td>
-            </tr>
+                <td><input type="email" name="email" id="email" value ="<?php echo "" ?>" ></td>
+
             <tr>
                 <td>Phone</td>
-                <td><input type="phone" name="phone" id="phone"></td>
+                <td><input type="phone" name="phone" id="phone" value ="<?php echo "" ?>" > </td>
             </tr>
             </tr>
             <tr>
                 <td></td>
-                <td><button type="submit">Register</button></td>
+                <td><button type="submit">Update</button></td>
                 
             </tr>
             <tr>
                 <td></td>
-                <td>
-                    Alredy a Registred ? <a href="signin.php">Signin</a>
-                </td>
         </tr>
     </tbody>
     </Table>
