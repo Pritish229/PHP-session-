@@ -25,8 +25,9 @@ if (isset($_SESSION['username'])) {
     } else {    
         ?>
          Hello User  <?php echo $LogedInUser; ?>
-         <a href="signout.php">Signout</a>
+         <a href="product.php">View Product</a>
          <a href="profile.php">Update profile</a>
+         <a href="signout.php">Signout</a>
     <?php
     }
 
