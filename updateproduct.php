@@ -1,15 +1,15 @@
 <?php 
 require "lib/conn.php";
 $product_id = $_GET['product_id'];
+if (isset($_POST['updateproduct'])) {
+  $product_name = $_POST['product_name'];
+  $price = $_POST['price'];
+  $description = $_POST['description'];
+  mysqli_query($con,"UPDATE products SET  `product_name` = '$product_name' , `price` = '$price', `description` = '$description' WHERE `product_id` = '$product_id' ");
+}
+
 $query_product = mysqli_query($con,"SELECT * FROM products WHERE product_id = $product_id");
 $product  = mysqli_fetch_object($query_product);
-
-if (isset($_POST['updateproduct'])) {
-    $product_name = $_POST['product_name'];
-    $price = $_POST['price'];
-    $description = $_POST['description'];
-    mysqli_query($con,"UPDATE products SET  `product_name` = $product_name, `price` = $price, `description` = $description WHERE `product_id` = '$product_id' ");
-}
 
 ?>
 <!DOCTYPE html>
@@ -40,13 +40,10 @@ if (isset($_POST['updateproduct'])) {
   
   <div class="form-floating">
     
-     <p>Description</p><textarea class="form-control" value =""  name ="description" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 170px;">
-    <?php echo $product->description ?>
-    </textarea>
-     
+     <p>Description</p>
+     <textarea class="form-control" value =""  name ="description" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 170px;"><?php echo $product->description ?></textarea>
     </div>
     <br>
-
   <button type="submit" class="btn btn-outline-primary">Submit</button>
   <a class="btn btn-outline-success" href="showdata.php" name ="showdata">Show Data</a>
 

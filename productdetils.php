@@ -16,7 +16,7 @@ $product  = mysqli_fetch_object($query_product);
     <title>Document</title>
 </head>
 <body>
-<div class="container ">
+<div class="container" style ="max-width:40%">
     <h1>Showing the data of <?php print_r($product->product_name); ?> </h1>
     <Label>Product name :</Label> <?php print_r($product->product_name); ?>
     <br>
@@ -26,7 +26,7 @@ $product  = mysqli_fetch_object($query_product);
     <Label>Product description :</Label> <?php print_r($product->description); ?>
     <br>
     <br>
-    <a class="btn btn-outline-success" href="showdata.php" name ="showdata">Show Data</a>
+    <a class="btn btn-outline-success" href="showdata.php" name ="showdata">Show all Data</a>
     </div>
 </body>
 </html>

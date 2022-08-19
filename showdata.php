@@ -40,18 +40,17 @@ require"lib/conn.php";
 
     ?>
         <tr>
-            <td> <?php echo $i ;?> </td> </td>
-            <td> <?php echo $row->product_name ;?> </td> </td>
-            <td> <?php echo $row->price ;?> </td> </td>
-            <td> <a href="productdetils.php?product_id=<?php echo $row->product_id ;?>">Product detils</a> </td> </td>
-            <td> <a class="btn btn-outline-danger" href="?delproduct_id=<?php echo $row->product_id ;?>">Delete</a> </td>
-            <td> <a class="btn btn-outline-success" href="updateproduct.php?product_id=<?php echo $row->product_id ;?> " name ="update">Update</a></td>
+            <td class = "text-center"> <?php echo $i ;?> </td> </td>
+            <td class = "text-center"> <?php echo $row->product_name ;?> </td> </td>
+            <td class = "text-center"> <?php echo $row->price ;?> </td> </td>
+            <td class = "text-center"> <a href="productdetils.php?product_id=<?php echo $row->product_id ;?>">Product detils</a> </td> </td>
+            <td class = "text-center"> <a class="btn btn-outline-danger" href="?delproduct_id=<?php echo $row->product_id ;?>">Delete</a> </td>
+            <td class = "text-center"> <a class="btn btn-outline-success" href="updateproduct.php?product_id=<?php echo $row->product_id ;?> " name ="update">Update</a></td>
             </tr>
         <?php 
             $i++;
         }
         ?>
-
     </table>
     Got To Product Insert Page <a href="product.php">Product page</a>
     </div>
