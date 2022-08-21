@@ -24,7 +24,7 @@ $product  = mysqli_fetch_object($query_product);
 </head>
 <body>
     <div class="container text-center">
-        <h1>Welcome to Product page</h1></div>
+        <h1>Welcome to Product update page</h1></div>
     <div class ="container-sm">
         
     <form action="" method="post" style = "width:700px; margin: auto;">

@@ -24,7 +24,7 @@ require"lib/conn.php";
 <body>
     <div class="container col-lg-6">
     <h1 class = "text-center">Data Table</h1>
-    <table class="table table-bordered border-primary ">
+    <table class="table table-bordered border-primary "> 
         <tr>
             <td> <b> Product Number </b> </td>
             <td> <b> Product Name </b> </td>
